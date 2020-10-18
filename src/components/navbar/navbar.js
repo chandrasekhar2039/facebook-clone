@@ -28,7 +28,23 @@ function Navbar() {
          <img src="/img/logo.png" alt="Logo"/>
           <div className="search"><SearchIcon/><input type="text" placeholder="Search facebook" /></div>
        </div>
-       
+       <div className="centre_nav">
+       <Badge color="secondary" className="icon active_block" >
+           <HomeRoundedIcon />
+       </Badge>
+       <Badge color="secondary" badgeContent={99} max={9} className="icon" >
+           <OndemandVideoRoundedIcon />
+       </Badge>
+       <Badge color="secondary" badgeContent={4} max={9} className="icon">
+          <NfcRoundedIcon />
+       </Badge>
+       <Badge color="secondary"  className="icon">
+          <StorefrontRoundedIcon />
+       </Badge>
+       <Badge color="secondary" className="icon" >
+           <GroupRoundedIcon />
+       </Badge>
+       </div>
        <div className="right_nav">
        <Avatar src="" />
        <Badge color="secondary" className="icon" >
