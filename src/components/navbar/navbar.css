@@ -38,3 +38,35 @@ justify-content: center;
   border: none;
   margin: 10px 0 0 30px;
 }
+.centre_nav{
+  display: flex;
+  justify-content:space-between;
+  margin: 0 0 0 0;
+}
+.centre_nav .MuiSvgIcon-root{
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+}
+.centre_nav .icon{
+  margin: 0 25px 0;
+}
+.right_nav{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.right_nav .icon{
+  padding: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  margin: 0 7px 0;
+}
+
+.active_block{
+  color: blue;
+  border-bottom: 1mm solid blue;
+  padding-bottom: 15px;
+}
