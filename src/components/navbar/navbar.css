@@ -22,8 +22,8 @@ justify-content: center;
 .search{
   justify-content: center;
   background-color: #eeeeee;
-  border-radius: 20px;
-  margin: 0 0 10px 10px;
+  border-radius: 30px;
+  margin: 0 0 18px 10px;
 }
 .search .MuiSvgIcon-root{
   position: relative;
@@ -31,11 +31,13 @@ justify-content: center;
   left: 20px;
 
 }
+
 .search input{
   outline: none !important;
   font-size: 1rem;
   background-color: #eeeeee;
   border: none;
+  border-radius: 30px;
   margin: 10px 0 0 30px;
 }
 .centre_nav{
@@ -43,14 +45,29 @@ justify-content: center;
   justify-content:space-between;
   margin: 0 0 0 0;
 }
-.centre_nav .MuiSvgIcon-root{
-  width: 80px;
+.centre_nav  .MuiSvgIcon-root{
+  width: 45px;
   height: 30px;
   cursor: pointer;
 }
 .centre_nav .icon{
-  margin: 0 25px 0;
+  justify-content: center;
+  display: flex;
+  margin: 0 3px 0;
+  padding: 15px 10px 15px;
+  width: 110px;
 }
+.centre_nav .icon:hover{
+  justify-content: center;
+  display: flex;
+  margin: 0 3px 0;
+  padding: 15px 10px 15px;
+  width: 110px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .right_nav{
   display: flex;
   justify-content: space-between;
@@ -66,7 +83,8 @@ justify-content: center;
 }
 
 .active_block{
-  color: blue;
-  border-bottom: 1mm solid blue;
-  padding-bottom: 15px;
+  color: #1877f2;
+  border-bottom: 0.8mm solid #1877f2;
+  background-color: white !important;
+  border-radius: 0 !important;
 }
