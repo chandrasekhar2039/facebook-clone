@@ -29,25 +29,25 @@ function Navbar() {
           <div className="search"><SearchIcon/><input type="text" placeholder="Search facebook" /></div>
        </div>
        <div className="centre_nav">
-       <div className="icon active_block" ><Badge color="secondary" ><HomeRoundedIcon /></Badge></div>
-       <div className="icon" ><Badge color="secondary" badgeContent={99} max={9}  ><OndemandVideoRoundedIcon /></Badge></div>
-       <div className="icon" ><Badge color="secondary" badgeContent={4} max={9} ><NfcRoundedIcon /> </Badge></div>
-       <div className="icon" ><Badge color="secondary"><StorefrontRoundedIcon /></Badge></div>
-       <div className="icon" ><Badge color="secondary"> <GroupRoundedIcon /></Badge></div>
+       <div className="icon active_block" data-title="Home" ><Badge color="secondary" ><HomeRoundedIcon /></Badge></div>
+       <div className="icon" data-title="Watch"><Badge color="secondary" badgeContent={99} max={9}  ><OndemandVideoRoundedIcon /></Badge></div>
+       <div className="icon" data-title="Gamming"><Badge color="secondary" badgeContent={4} max={9} ><NfcRoundedIcon /> </Badge></div>
+       <div className="icon" data-title="Marketplace"><Badge color="secondary"><StorefrontRoundedIcon /></Badge></div>
+       <div className="icon" data-title="Groups"><Badge color="secondary"> <GroupRoundedIcon /></Badge></div>
 
 
        </div>
        <div className="right_nav">
        <Avatar src="" />
-       <Badge color="secondary" className="icon" >
+       <Badge color="secondary" className="icon" data-title="Create" >
            <AddRoundedIcon />
        </Badge>
-       <Badge color="secondary" badgeContent={2} max={9} className="icon" >
+       <Badge color="secondary" badgeContent={2} max={9} className="icon" data-title="Messenger">
           <ForumRoundedIcon />
-       </Badge> <Badge color="secondary" badgeContent={7} max={9} className="icon" >
+       </Badge> <Badge color="secondary" badgeContent={7} max={9} className="icon" data-title="Notifications" >
            <NotificationsActiveRoundedIcon />
         </Badge>
-        <Badge color="secondary" className="icon" >
+        <Badge color="secondary" className="icon" data-title="Account">
             <ArrowDropDownRoundedIcon />
         </Badge>
        </div>
