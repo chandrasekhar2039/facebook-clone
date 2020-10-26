@@ -38,7 +38,7 @@ function Navbar() {
 
        </div>
        <div className="right_nav">
-       <Avatar src="" />
+       <div className="user_info"><Avatar src="" /> <p>username</p> </div>
        <Badge color="secondary" className="icon" data-title="Create" >
            <AddRoundedIcon />
        </Badge>

@@ -7,13 +7,14 @@
   justify-content: space-between;
   display: flex;
   margin: 20 15px 0;
-  padding: 20px 20px 0 20px;
+  padding: 10px 20px 0 20px;
   box-shadow:2px 2px 7px rgba(128,128,128,0.3);
 }
 
 .left_nav{
 display: flex;
 justify-content: center;
+margin: 10px 0 0;
 }
 
 .left_nav img{
@@ -23,7 +24,7 @@ justify-content: center;
   justify-content: center;
   background-color: #eeeeee;
   border-radius: 30px;
-  margin: 0 0 18px 10px;
+  margin: 0 0 15px 10px;
 }
 .search .MuiSvgIcon-root{
   position: relative;
@@ -43,19 +44,20 @@ justify-content: center;
 .centre_nav{
   display: flex;
   justify-content:space-between;
-  margin: 0 0 0 0;
+  margin: 0 auto 0 90px;
 }
 .centre_nav  .MuiSvgIcon-root{
-  width: 45px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
 }
 .centre_nav .icon{
   justify-content: center;
   display: flex;
   margin: 0 3px 0;
-  padding: 15px 10px 15px;
+  padding: 15px 10px 10px;
   width: 110px;
+  color: #65676b;
 }
 .centre_nav .icon:hover{
   justify-content: center;
@@ -72,17 +74,24 @@ justify-content: center;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  padding: 10px 0 0;
 }
 .right_nav .icon{
   padding: 5px;
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: #eeeeee;
   margin: 0 9px 0;
+  justify-content: center;
+}
+.right_nav .MuiSvgIcon-root{
+  width: 0.9em !important;
+  height: 0.9em !important;
+  margin: 4px auto 0;
 }
 .active_block{
-  color: #1877f2;
+  color: #1877f2 !important;
   border-bottom: 0.8mm solid #1877f2;
   background-color: white !important;
   border-radius: 0 !important;
@@ -95,7 +104,7 @@ justify-content: center;
 [data-title]:hover::before {
   content: attr(data-title);
   position: absolute;
-  bottom: -26px;
+  bottom: -40px;
   display: inline-block;
   padding: 8px;
   border-radius: 7px;
@@ -106,4 +115,17 @@ justify-content: center;
   white-space: nowrap;
   opacity: 0.8;
   z-index: 100;
+}
+
+.user_info{
+  display: flex;
+  justify-content: center;
+}
+.user_info p{
+  margin: 5px 5px 0 10px;
+}
+.user_info .MuiAvatar-root{
+  margin: 5px auto 0;
+  width: 30px !important;
+  height: 30px !important;
 }
