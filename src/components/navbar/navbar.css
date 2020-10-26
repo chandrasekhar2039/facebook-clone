@@ -9,6 +9,7 @@
   margin: 20 15px 0;
   padding: 10px 20px 0 20px;
   box-shadow:2px 2px 7px rgba(128,128,128,0.3);
+  background-color: white;
 }
 
 .left_nav{
@@ -63,7 +64,7 @@ margin: 10px 0 0;
   justify-content: center;
   display: flex;
   margin: 0 3px 0;
-  padding: 15px 10px 15px;
+  padding: 15px 10px 10px;
   width: 110px;
   background-color: #eeeeee;
   border-radius: 10px;
