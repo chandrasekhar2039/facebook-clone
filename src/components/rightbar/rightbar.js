@@ -17,6 +17,15 @@ function Rightbar(){
 <Iframe src="https://www.instagram.com/p/CEZL4gQgnoe/embed" />
 <Iframe src="https://www.instagram.com/p/CEg4zOlg8Jf/embed" />
 <Iframe src="https://www.instagram.com/p/CEjdfGTAhz8/embed" />
+<br/>
+<br/>
+<br />
+<br/>
+<br/>
+<br />
+<br/>
+<br/>
+<br />
 </div>
 </div>
   )
