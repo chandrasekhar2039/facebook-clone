@@ -1,3 +1,7 @@
+.leftbar{
+position: sticky;
+}
+
 .line{
   margin: 7px 0 15px;
   width: 290px;

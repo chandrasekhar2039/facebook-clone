@@ -1,0 +1,11 @@
+.rightbar {
+  height: 100%;
+  width: 310px;
+  overflow: hidden;
+}
+
+.frames {
+  height: 900px;
+  overflow: scroll;
+  width: 327px;
+}

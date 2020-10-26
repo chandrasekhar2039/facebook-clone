@@ -17,7 +17,7 @@ import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRo
 import "./style.css";
 
 function Leftbar(){
-  return(<div>
+  return(<div className="leftbar">
     <div className="leftbar_top">
     <Nav icon={<Avatar />} name="Username" />
     <Nav icon={<FlagTwoToneIcon />} name="Pages" />
