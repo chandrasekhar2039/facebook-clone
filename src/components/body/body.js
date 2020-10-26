@@ -9,6 +9,7 @@ function Body(){
 
     <h1>Body</h1>
     <p> your components and their props goes here </p>
+    <p>tools and their compostite componets </p>
 
     </div>
   );
