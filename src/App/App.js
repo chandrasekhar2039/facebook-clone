@@ -10,11 +10,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-    <Navbar />
-    <div className="body">
-    <Leftbar />
-    <Body />
-    <Rightbar /> </div>
+    <div className="navbar_main" > <Navbar /> </div>
+    <div className="leftbar_main" > <Leftbar /> </div>
+    <div className="body_main" > <Body /> </div>
+    <div className="rightbar_main" > <Rightbar />  </div>
+
     </div>
   );
 }
