@@ -1,3 +1,10 @@
-.leftbar{
-  display: flex;
+.line{
+  margin: 7px 0 15px;
+  width: 290px;
+}
+.leftbar_botom{
+  opacity: 0.7;
+}
+.leftbar_botom h3{
+  margin: 0 0 10px;
 }
