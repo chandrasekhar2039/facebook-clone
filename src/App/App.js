@@ -13,7 +13,6 @@ import './App.css';
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
-
   return (
     <div className="App">
      {!user ? (
