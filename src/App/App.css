@@ -18,13 +18,13 @@
 
 .rightbar_main {
   position: fixed;
-  right: 0;
+  right: 3px;
   top: 85px;
 }
 
 .body_main{
   position: absolute;
-  left: 410px;
-  right: 453px;
+  left: 413px;
+  right: 413px;
   top: 85px;
 }
