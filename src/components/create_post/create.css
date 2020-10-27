@@ -17,11 +17,11 @@
   display: flex;
 }
 .messageSender_top > form > .words{
-  width: 390px;
+  width: 380px;
   outline-width: 0;
   border: none;
   padding: 5px 20px;
-  margin: 0 7px;
+  margin: 0 5px 0 7px;
   border-radius: 100px;
   background-color: #eff2f5;
 }

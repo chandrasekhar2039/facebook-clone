@@ -11,6 +11,7 @@
     "firebase": "^7.24.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-facebook-emoji": "^1.0.12",
     "react-scripts": "3.4.3"
   },
   "scripts": {
