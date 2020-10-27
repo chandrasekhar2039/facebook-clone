@@ -1,15 +1,8 @@
-/* .story_prop{
-  width: 150px;
-  height: 200px;
-} */
-
-
-
 .story {
   position: relative;
   background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   width: 110px;
   height: 195px;
   box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
