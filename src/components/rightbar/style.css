@@ -6,6 +6,26 @@
 
 .frames {
   height: 900px;
+  width: 310px;
+}
+.frames:hover {
   overflow: scroll;
-  width: 327px;
+}
+.rightbar ::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.rightbar ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.rightbar ::-webkit-scrollbar-thumb {
+  background: #C0C0C0;
+}
+
+/* Handle on hover */
+.rightbar ::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }
