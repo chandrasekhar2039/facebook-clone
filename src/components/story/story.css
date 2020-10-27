@@ -24,6 +24,7 @@
 .story > h4 {
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 9px;
   color: white;
+  font-size: 0.8rem;
 }

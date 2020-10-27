@@ -1,4 +1,3 @@
-import { Button } from "@material-ui/core";
 import React from "react";
 import "./login.css";
 import { auth, provider } from "../../firebase/firebase.js";
@@ -8,7 +7,8 @@ import { useStateValue } from "../../data/stateprovide.js";
 function Login() {
   const [state, dispatch] = useStateValue();
 
-  const signIn = () => {
+  const signIn = (e) => {
+    e.preventDefault();
     auth
       .signInWithPopup(provider)
       .then((result) => {
@@ -22,22 +22,20 @@ function Login() {
   };
 
   return (
-    <div className="login">
+    <div className="login_main">
       <div className="login_logo">
         <img
-          src="https://cdn.freebiesupply.com/logos/large/2x/facebook-logo-2019.png"
-          alt=""
-        />
-        <img
-          src="https://download.logo.wine/logo/Facebook/Facebook-Logo.wine.png"
+          src="/img/fb_logo.svg"
           alt=""
         />
       </div>
-      <Button type="submit" onClick={signIn}>
-        Sign In
-      </Button>
-    </div>
-  );
-}
+      <div className="login_port">
+      <form onSubmit={signIn}>
+        <button type="submit" className="btn btn-primary">Log In with Google </button>
+        </form>
+      </div>
 
+    </div>
+  )
+}
 export default Login;

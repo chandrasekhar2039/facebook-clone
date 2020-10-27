@@ -1,23 +1,35 @@
-.login {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-}
-.login > div > img {
-  object-fit: contain;
-  height: 150px;
-}
-.login > div {
+.login_main{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin: 240px auto auto;
 }
-.login > button {
-  width: 300px;
-  background-color: #c6cacf;
-  color: #eff2f5;
-  font-weight: 800;
+.login_logo{
+  width: 500px;
+  height: 150px;
+  margin-right: 95px;
 }
-.login > button:hover {
-  background-color: white;
-  color: #2e81f4;
+
+.login_port{
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  margin: 40px 0 0 95px;
+  padding: 8px 0 0;
+  width: 400px;
+}
+.login_port > form > button{
+  margin: 23px 15px 0;
+  padding: 15px;
+  width: -webkit-fill-available;
+  font-size: 1.3rem;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  border-radius: 7px;
+  color: white;
+  background-color: #1877f2;
+  outline: none !important;
+  cursor: pointer;
+  border: none;
 }

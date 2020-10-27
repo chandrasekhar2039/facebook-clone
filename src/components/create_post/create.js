@@ -43,7 +43,7 @@ function Createpost() {
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`what's on your mind  ${firstname} ? `}
+            placeholder={`what's on your mind ${firstname} ? `}
             type="text"
           /> </div>
           <div className="img">

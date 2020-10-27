@@ -6,7 +6,7 @@ function Story(prop) {
   return (<div className="story_prop">
     <div style={{ background: `url(${prop.image})` }} className="story">
       <Avatar className="story_avatar" src={prop.pic} />
-      <h4>user</h4>
+      <h4>{prop.name_user}</h4>
     </div></div>
   );
 }
