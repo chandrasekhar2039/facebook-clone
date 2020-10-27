@@ -3,8 +3,18 @@ import Stry from "../story/story.js"
 import "./body.css"
 import Createpost from "../create_post/create.js";
 import Post from "../post/post.js";
+import DB from "../../firebase/firebase.js";
 function Body(){
 
+  const [posts, setPosts] = React.useState([]);
+
+  React.useEffect(() => {
+    DB.collection("posts")
+      .orderBy("timeStamp", "desc")
+      .onSnapshot((snapshot) =>
+        setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
+      );
+  }, []);
 
     return(
       <div className="body_whole">
@@ -44,6 +54,16 @@ function Body(){
             username="username"
             image=""
           />
+          {posts.map((post) => (
+        <Post
+          key={post.id}
+          profilePic={post.data.profilePic}
+          message={post.data.message}
+          timestamp={post.data.timeStamp}
+          username={post.data.userName}
+          image={post.data.image}
+        />
+      ))}
     </div>
     </div>
   );

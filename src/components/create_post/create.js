@@ -7,43 +7,43 @@ import "./create.css";
 import VideoCallRoundedIcon from '@material-ui/icons/VideoCallRounded';
 import AddToPhotosRoundedIcon from '@material-ui/icons/AddToPhotosRounded';
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
-//contexAPI
 
-// import { useStateValue } from "./StateProvider";
-// import db from "../firebase";
-// import firebase from "firebase";
+import { useStateValue } from "../../data/stateprovide.js";
+import DB from "../../firebase/firebase.js";
+import Firebase from "firebase";
 
 function Createpost() {
   //state and hooks
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  // const [{ user }, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // db.collection("posts").add({
-    //   message: input,
-    //   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    //   profilePic: user.photoURL,
-    //   username: user.displayName,
-    //   image: imageUrl,
-    // });
+    DB.collection("posts").add({
+      message: input,
+      timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
+      profilePic: user.photoURL,
+      userName: user.displayName,
+      image: imageUrl,
+    });
 
     setInput("");
     setImageUrl("");
   };
+
+  var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
   return (
     <div className="messageSender">
       <div className="messageSender_top">
-        {/* <Avatar src={user.photoURL} /> */}
-        <Avatar src="" />
+        {<Avatar src={user.photoURL} />}
         <form>
         <div className="words">
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            // placeholder={`what's on your mind  ${user.displayName} ? `}
+            placeholder={`what's on your mind  ${firstname} ? `}
             type="text"
           /> </div>
           <div className="img">

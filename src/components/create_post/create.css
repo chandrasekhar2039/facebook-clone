@@ -25,6 +25,9 @@
   border-radius: 100px;
   background-color: #eff2f5;
 }
+.messageSender_top > form > .words >input{
+  width: 300px;
+}
 .messageSender_top > form > .img{
   outline-width: 0;
   border: none;

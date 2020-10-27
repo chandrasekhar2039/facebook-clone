@@ -21,7 +21,12 @@ import Avatar from '@material-ui/core/Avatar';
 //badge
 import Badge from '@material-ui/core/Badge';
 
+import { useStateValue } from "../../data/stateprovide.js";
+
+
 function Navbar() {
+  const [{ user }, dispatch] = useStateValue();
+  var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
   return (
     <div className="navbar">
        <div className="left_nav">
@@ -38,7 +43,7 @@ function Navbar() {
 
        </div>
        <div className="right_nav">
-       <div className="user_info"><Avatar src="" /> <p>username</p> </div>
+       <div className="user_info"><Avatar src={user.photoURL} /> <p>{firstname}</p> </div>
        <Badge color="secondary" className="icon" data-title="Create" >
            <AddRoundedIcon />
        </Badge>
