@@ -32,9 +32,9 @@ function Post({ profilePic, image, username, timestamp, message }) {
         <p>{message}</p>
       </div>
       <div className="post_image">
-        <p>
+
           <img style={{ width: "100%", cursor: "pointer" }} src={image}></img>
-        </p>
+    
       </div>
 
       <div className="post_options">

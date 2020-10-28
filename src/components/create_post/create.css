@@ -30,7 +30,7 @@
   cursor: pointer;
 }
 .messageSender_top > form > .words >input{
-  width: 300px;
+  width: 380px;
 }
 .messageSender_top > form > .img{
   outline-width: 0;
@@ -88,4 +88,28 @@
   background-color: #eff2f5;
   border-radius: 7px;
   cursor: pointer;
+}
+.popup_top{
+  display: flex;
+}
+.popup_top > .MuiAvatar-root{
+  margin: 8px 5px 0 0;
+}
+.popup_img{
+  margin: 15px 0 10px;
+  display: flex;
+  justify-content: center;
+}
+.popup_img > img{
+  border-radius: 7px;
+  width: 550px;
+  height:300px;
+  max-width: 550px !important;
+  max-height: 500px !important;
+}
+.poup_topinfo{
+  margin: 5px;
+}
+.poup_topinfo > h3{
+  font-size: 1rem;
 }

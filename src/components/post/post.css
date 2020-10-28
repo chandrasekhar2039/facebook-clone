@@ -34,6 +34,7 @@
 }
 .post_image > img {
   width: 100%;
+  border-top: 1px solid lightgray;
 }
 
 .post_options {
