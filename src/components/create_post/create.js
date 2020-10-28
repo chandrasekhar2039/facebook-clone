@@ -26,6 +26,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 
 
 function Createpost() {
+
   //state and hooks
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -64,7 +65,7 @@ function Createpost() {
   async function handleChange (event){
     const picFile=event.target.files[0];
      setfile(picFile);
-   console.log(picFile.name);
+
 
    var reader = new FileReader();
    reader.onload = function(event) {
@@ -73,7 +74,7 @@ function Createpost() {
 
   reader.readAsDataURL(event.target.files[0]);
 
-   // setOpen(true);
+
   };
 
 
@@ -89,16 +90,14 @@ function handleClose() {
 
   async function handlePost(){
 
-
-    // console.log(fileUploaded.name);
-    // console.log(input);
+   setOpen(false);
 
    let bucketName="postImages";
    let storageRef =Firebase.storage().ref(`${bucketName}/${fileUploaded.name}`);
    await storageRef.put(fileUploaded);
    let downloadUrl=await storageRef.getDownloadURL();
 
-    setOpen(false);
+
 
     DB.collection("posts").add({
       message: input,
