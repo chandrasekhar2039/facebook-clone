@@ -14,10 +14,10 @@ function Post({ profilePic, image, username, timestamp, message }) {
   const [emoji, setEmoji] = useState(false);
   const [likesCounter, setLikesCounter] = useState(0);
 
-  const likecounterfun = () => {
-    let setcounter = likesCounter + 1;
-    setLikesCounter(setcounter);
-  };
+  // const likecounterfun = () => {
+  //   let setcounter = likesCounter + 1;
+  //   setLikesCounter(setcounter);
+  // };
   return (<div>
     <div className="post">
       <div className="post_top">
@@ -34,7 +34,7 @@ function Post({ profilePic, image, username, timestamp, message }) {
       <div className="post_image">
 
           <img style={{ width: "100%", cursor: "pointer" }} src={image}></img>
-    
+
       </div>
 
       <div className="post_options">
@@ -44,12 +44,12 @@ function Post({ profilePic, image, username, timestamp, message }) {
           className="likeemoji"
         >
           {emoji && (
-            <span className="facebookemojiset" onClick={likecounterfun}>
+            <span className="facebookemojiset">
                 <Femojis />
             </span>
           )}
-          <ThumbUpRoundedIcon onClick={likecounterfun}/>
-          <p onClick={likecounterfun}>Like {likesCounter}</p>
+          <ThumbUpRoundedIcon />
+          <p >Like </p>
         </div>
         <div className="post_option">
           <ChatBubbleOutlineIcon />
