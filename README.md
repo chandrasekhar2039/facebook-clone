@@ -2,7 +2,7 @@
 https://facebook-clone-react-c8892.web.app/
 
 ## Do note
-This build is not responsive view it in laptop or desktop with a screen size of 15.7 inch (recommended) <br>
+This build is not responsive view it in laptop or desktop with a screen size of 15.7 inch (recommended). <br>
 __A responsive version will be deployed soon Stay tuned__
 ## Available Scripts
 
