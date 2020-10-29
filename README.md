@@ -1,6 +1,9 @@
 ## Site in action
 https://facebook-clone-react-c8892.web.app/
 
+## Do note
+This build is not responsive view it in laptop or desktop with a screen size of 15.7 inch (recommended)
+_A responsive version will be deployed soon Stay tuned_
 ## Available Scripts
 
 In the project directory, you can run:
