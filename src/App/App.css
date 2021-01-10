@@ -3,28 +3,6 @@
   padding: 0;
 }
 
-.navbar_main {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.leftbar_main {
-  position: fixed;
-  left: 15px;
-  top: 85px;
-}
-
-.rightbar_main {
-  position: fixed;
-  right: 3px;
-  top: 85px;
-}
-
-.body_main{
-  position: absolute;
-  left: 413px;
-  right: 413px;
-  top: 85px;
+.container-fluid .row{
+  width: auto!important;
 }

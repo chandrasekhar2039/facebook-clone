@@ -14,16 +14,16 @@ import EventAvailableTwoToneIcon from '@material-ui/icons/EventAvailableTwoTone'
 import UpdateTwoToneIcon from '@material-ui/icons/UpdateTwoTone';
 import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
 
-import { useStateValue } from "../../data/stateprovide.js";
+// import { useStateValue } from "../../data/stateprovide.js";
 //css
 import "./style.css";
 
 function Leftbar(){
-  const [{ user }, dispatch] = useStateValue();
+  // const [{ user }, dispatch] = useStateValue();
 
-  return(<div className="leftbar">
+  return(<div className="leftbar mt-5 pt-3">
     <div className="leftbar_top">
-    <Nav icon={<Avatar src={user.photoURL} />} name={user.displayName} />
+    <Nav icon={<Avatar src="#" />} name="chandu" />
     <Nav icon={<FlagTwoToneIcon />} name="Pages" />
     <Nav icon={<LocalHospitalTwoToneIcon />} name="COVID-19 Information Centre" />
     <Nav icon={<SupervisorAccountTwoToneIcon />} name="Friends" />

@@ -29,7 +29,7 @@ function Navbar_comp() {
   // var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
   return <>
 
-   <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="navbar_main">
+   <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="navbar_main" fixed="top">
      <Navbar.Brand href="#home">
      <img
        src="./Favicion/logo.png"

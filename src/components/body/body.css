@@ -1,4 +1,10 @@
 .story_frame{
   display: flex;
-  justify-content: center;
+  overflow-x: scroll;
+  margin: 10px auto;
+}
+.story_frame::-webkit-scrollbar {    display: none;}
+
+.story_prop{
+  margin-bottom: 10px;
 }
