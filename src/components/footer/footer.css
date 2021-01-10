@@ -1,8 +1,7 @@
 .footer_main{
-  margin: 50px auto;
   text-align: center;
 }
-.footer_main h4{
+.footer_main h6{
   color: grey;
 }
 .footer_main a{
