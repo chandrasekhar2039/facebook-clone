@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Navbar,Nav} from "react-bootstrap"
 // style sheet
 import "./navbar.css"
 
@@ -21,43 +21,54 @@ import Avatar from '@material-ui/core/Avatar';
 //badge
 import Badge from '@material-ui/core/Badge';
 
-import { useStateValue } from "../../data/stateprovide.js";
+// import { useStateValue } from "../../data/stateprovide.js";
 
 
-function Navbar() {
-  const [{ user }, dispatch] = useStateValue();
-  var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
-  return (
-    <div className="navbar">
-       <div className="left_nav">
-         <img src="/img/logo.png" alt="Logo"/>
-          <div className="search"><SearchIcon/><input type="text" placeholder="Search facebook" /></div>
-       </div>
-       <div className="centre_nav">
-       <div className="icon active_block" data-title="Home" ><Badge color="secondary" ><HomeRoundedIcon /></Badge></div>
-       <div className="icon" data-title="Watch"><Badge color="secondary" badgeContent={99} max={9}  ><OndemandVideoRoundedIcon /></Badge></div>
-       <div className="icon" data-title="Gamming"><Badge color="secondary" badgeContent={4} max={9} ><NfcRoundedIcon /> </Badge></div>
-       <div className="icon" data-title="Marketplace"><Badge color="secondary"><StorefrontRoundedIcon /></Badge></div>
-       <div className="icon" data-title="Groups"><Badge color="secondary"> <GroupRoundedIcon /></Badge></div>
+function Navbar_comp() {
+  // const [{ user }, dispatch] = useStateValue();
+  // var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
+  return <>
+
+   <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="navbar_main">
+     <Navbar.Brand href="#home">
+     <img
+       src="./Favicion/logo.png"
+       width="30"
+       height="30"
+       className="d-inline-block align-top"
+       alt="Facebook logo"
+     />
+     </Navbar.Brand>
+     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+     <Navbar.Collapse id="responsive-navbar-nav">
+
+     <Nav className="mr-auto nav_left">
+       <Nav.Link href="#">
+       <div className="search_bar"><SearchIcon/><input type="text" placeholder="Search facebook" /></div>
+       </Nav.Link>
+     </Nav>
+
+     <Nav className="mx-auto nav_center">
+     <Nav.Link href="#1" data-title="Home" className="active_block"> <div className="icon"  ><Badge color="secondary" ><HomeRoundedIcon /></Badge><h6>Home</h6></div></Nav.Link>
+     <Nav.Link href="#2"  data-title="Watch"> <div className="icon"><Badge color="secondary" badgeContent={99} max={9}  ><OndemandVideoRoundedIcon /></Badge><h6>Watch</h6></div></Nav.Link>
+     <Nav.Link href="#3" data-title="Gamming"> <div className="icon" ><Badge color="secondary" badgeContent={4} max={9} ><NfcRoundedIcon /> </Badge><h6>Gamming</h6></div></Nav.Link>
+     <Nav.Link href="#4" data-title="Marketplace">  <div className="icon" ><Badge color="secondary"><StorefrontRoundedIcon /></Badge><h6>Marketplace</h6></div></Nav.Link>
+     <Nav.Link href="#5" data-title="Groups"><div className="icon" ><Badge color="secondary"> <GroupRoundedIcon /></Badge><h6>Groups</h6></div></Nav.Link>
+     </Nav>
+
+     <Nav className="ml-auto nav_right">
+       <Nav.Link href="#deets" data-title="User"><div className="user_info d-flex mr-1 mt-1"><Avatar src="#" /> <p className="pl-2 pr-1">test</p> </div></Nav.Link>
+       <Nav.Link href="#deets"><Badge color="secondary" className="icon" data-title="Create" ><AddRoundedIcon /></Badge></Nav.Link>
+       <Nav.Link href="#deets"><Badge color="secondary" badgeContent={2} max={9} className="icon" data-title="Messenger"><ForumRoundedIcon /> </Badge></Nav.Link>
+       <Nav.Link href="#deets"><Badge color="secondary" badgeContent={7} max={9} className="icon" data-title="Notifications" ><NotificationsActiveRoundedIcon /> </Badge></Nav.Link>
+       <Nav.Link href="#deets"><Badge color="secondary" className="icon" data-title="Account"> <ArrowDropDownRoundedIcon /> </Badge></Nav.Link>
+     </Nav>
 
 
-       </div>
-       <div className="right_nav">
-       <div className="user_info"><Avatar src={user.photoURL} /> <p>{firstname}</p> </div>
-       <Badge color="secondary" className="icon" data-title="Create" >
-           <AddRoundedIcon />
-       </Badge>
-       <Badge color="secondary" badgeContent={2} max={9} className="icon" data-title="Messenger">
-          <ForumRoundedIcon />
-       </Badge> <Badge color="secondary" badgeContent={7} max={9} className="icon" data-title="Notifications" >
-           <NotificationsActiveRoundedIcon />
-        </Badge>
-        <Badge color="secondary" className="icon" data-title="Account">
-            <ArrowDropDownRoundedIcon />
-        </Badge>
-       </div>
-    </div>
-  );
+          </Navbar.Collapse>
+        </Navbar>
+
+        </>
 }
 
-export default Navbar;
+export default Navbar_comp;
