@@ -9,7 +9,7 @@ import AddToPhotosRoundedIcon from '@material-ui/icons/AddToPhotosRounded';
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import VideocamRoundedIcon from '@material-ui/icons/VideocamRounded';
 
-import {Container,Col,Row,Card} from "react-bootstrap"
+import {Container,Col,Row,Image} from "react-bootstrap"
 
 // import { useStateValue } from "../../data/stateprovide.js";
 import DB from "../../firebase/firebase.js";
@@ -144,10 +144,68 @@ function handleClose() {
      <VideocamRoundedIcon style={{ color: "red" }} />
           <p className="pl-2">Live Video</p>
    </Col>
-   <Col xs={4} className="">
-  <AddToPhotosRoundedIcon style={{ color: "green" }} />
-          <p className="pl-2 ">Photo/Video</p>
-   </Col>
+   <Col xs={4} className="" >
+   <div onClick={handleClick} data-title="Click to Upload Photo"  className="d-flex">
+  <AddToPhotosRoundedIcon style={{ color: "green" }}  />
+          <p className="pl-2 ">Photo/Video</p></div>
+
+
+
+
+          {/* ===================for popup================*/}
+
+          <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
+        <DialogTitle id="form-dialog-title" >Create Post</DialogTitle>
+        <DialogContent>
+
+          <DialogContentText>
+          <div className="popup_main">
+            <div className="popup_top d-flex">
+              <Avatar src={"#"} />
+                <h5 className="p-2 ">{"Chandrasekhar"}</h5>
+                </div>
+                <p className="m-1 ">{new Date().toLocaleDateString()}</p>
+              </div>
+          </DialogContentText>
+
+          <TextField autoFocus autoComplete="off"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={`what's on your mind ${"chandu"} ? `}
+          type="text"
+          fullWidth
+           />
+
+           <Container><Row><Col> <Image src={src} className="w-100 mt-2" rounded /></Col></Row></Container>
+
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button variant="contained" color="primary"  onClick={handlePost}>
+           Post
+        </Button>
+        </DialogActions>
+      </Dialog>
+      </Col>
+
+
+
+      {/*==============================pop up ends================================*/}
+{/* ======================= input stream==============*/}
+      <input
+        type="file"
+        ref={hiddenFileInput}
+        onChange={handleChange}
+        style={{display: 'none'}}
+       />
+       {/* ======================= input stream ends==============*/}
+
    <Col xs={4} className="des">
      <InsertEmoticonIcon style={{ color: "orange" }} />
           <p className="pl-2">Feeling/Activity</p>
