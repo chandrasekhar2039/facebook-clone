@@ -8,3 +8,15 @@
 .story_prop{
   margin-bottom: 10px;
 }
+
+@media (max-width:1000px) {
+  .body_main{
+    padding: 0!important;
+  }
+  .body_main .story_frame{
+    margin-left: 0rem !important;
+  }
+  .body_main .createpost{
+    margin: 0!important;
+  }
+}

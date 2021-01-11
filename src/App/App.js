@@ -18,9 +18,9 @@ function App() {
   return (<>
 <Navbar />
 <Container fluid ><Row>
-<Col lg={3}><Leftbar/></Col>
-<Col lg={6}><Body/></Col>
-<Col lg={3}></Col>
+<Col lg={3} className="mob"><Leftbar/></Col>
+<Col lg={6} sm={12}><Body/></Col>
+<Col lg={3} className="mob"><Rightbar/></Col>
 </Row></Container>
 </>
   );

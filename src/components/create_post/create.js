@@ -7,8 +7,11 @@ import "./create.css";
 import VideoCallRoundedIcon from '@material-ui/icons/VideoCallRounded';
 import AddToPhotosRoundedIcon from '@material-ui/icons/AddToPhotosRounded';
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import VideocamRoundedIcon from '@material-ui/icons/VideocamRounded';
 
-import { useStateValue } from "../../data/stateprovide.js";
+import {Container,Col,Row,Card} from "react-bootstrap"
+
+// import { useStateValue } from "../../data/stateprovide.js";
 import DB from "../../firebase/firebase.js";
 import Firebase from "firebase";
 
@@ -30,7 +33,7 @@ function Createpost() {
   //state and hooks
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [{ user }, dispatch] = useStateValue();
+  // const [{ user }, dispatch] = useStateValue();
   const [open, setOpen] = useState(false);
   const [src,setsrc]=useState("");
   const [fileUploaded,setfile]=useState("");
@@ -39,20 +42,20 @@ function Createpost() {
 
     e.preventDefault();
 
-    DB.collection("posts").add({
-      message: input,
-      timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
-      profilePic: user.photoURL,
-      userName: user.displayName,
-      image: imageUrl,
-    });
+    // DB.collection("posts").add({
+    //   message: input,
+    //   timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
+    //   profilePic: user.photoURL,
+    //   userName: user.displayName,
+    //   image: imageUrl,
+    // });
 
 
     setInput("");
     setImageUrl("");
   };
 
-  var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
+  // var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
 
   const hiddenFileInput = React.useRef(null);
 
@@ -99,97 +102,67 @@ function handleClose() {
 
 
 
-    DB.collection("posts").add({
-      message: input,
-      timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
-      profilePic: user.photoURL,
-      userName: user.displayName,
-      image: downloadUrl,
-    });
+    // DB.collection("posts").add({
+    //   message: input,
+    //   timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
+    //   profilePic: user.photoURL,
+    //   userName: user.displayName,
+    //   image: downloadUrl,
+    // });
     setInput("");
 
   }
 
-  return (
-    <div className="messageSender">
-      <div className="messageSender_top">
-        {<Avatar src={user.photoURL} />}
-        <form>
-        <div className="words">
-          <input
+  return <>
+  <Container className="main_cre p-1">
+<Row className="user_input mt-2 pb-3">
+   <Col xs={1}className="justify-content-center d-flex pr-0 ml-1 pt-1" >{<Avatar src={"#"} />}</Col>
+
+   <Col xs={7} className="">
+   <form className="thoughts  p-1 mt-1">
+      <input className=" pl-3 pr-2 p-1 w-100"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`what's on your mind ${firstname}? `}
+            placeholder={`what's on your mind ${"chandu"}? `}
             type="text"
-          /> </div>
-          <div className="img">
-          <input
+          />  <button  onClick={handleSubmit} type="submit" style={{display:"none"}} ></button>
+      </form>
+     </Col>
+   <Col xs={3} className="p-0">
+    <form className="img_url  mt-1 p-1">
+      <input className="pl-3 w-100 pr-2 p-1"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             type="text"
-            placeholder="Image URL (optional)"
-          /></div>
-          <button onClick={handleSubmit} type="submit"></button>
-        </form>
-      </div>
+            placeholder="Image Url"
+          />
+          <button onClick={handleSubmit} type="submit" style={{display:"none"}}></button></form>
+    </Col>
+       </Row>
+  <Row className="activity mt-2 " >
+    <Col xs={4} className="" >
+     <VideocamRoundedIcon style={{ color: "red" }} />
+          <p className="pl-2">Live Video</p>
+   </Col>
+   <Col xs={4} className="">
+  <AddToPhotosRoundedIcon style={{ color: "green" }} />
+          <p className="pl-2 ">Photo/Video</p>
+   </Col>
+   <Col xs={4} className="des">
+     <InsertEmoticonIcon style={{ color: "orange" }} />
+          <p className="pl-2">Feeling/Activity</p>
+    </Col>
+    <Col xs={4} className="mob">
+    <VideoCallRoundedIcon style={{ color: "Purple" }} />
+           <p className="pl-2">Room</p>
+     </Col>
+</Row>
 
-      <div className="messageSender_bottom">
-        <div className="messageSender_option">
-          <VideoCallRoundedIcon style={{ color: "red" }} />
-          <h3>Live Video</h3>
-        </div>
-        <div className="messageSender_option" onClick={handleClick} data-title="Click to Upload Photo">
-          <AddToPhotosRoundedIcon style={{ color: "green" }} />
-          <h3>Photo/Video</h3></div>
-           <div className="popup">
-          <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="form-dialog-title"
-      >
-        <DialogTitle id="form-dialog-title" style={{"textAlign":"center","width":"550px"}} ><h4>Create Post</h4></DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-          <div className="popup_main">
-            <div className="popup_top">
-              <Avatar src={user.photoURL} />
-              <div className="poup_topinfo">
-                <h3>{user.displayName}</h3>
-                <p>{new Date().toLocaleDateString()}</p>
-              </div></div></div>
-          </DialogContentText>
-          <TextField autoFocus autoComplete="off"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder={`what's on your mind ${firstname} ? `}
-          type="text"
-          fullWidth
-           />
-            <div className="popup_img"><img src={src}></img></div>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button variant="contained" color="primary"  onClick={handlePost}>
-           Post
-        </Button>
-        </DialogActions>
-      </Dialog>
-         </div>
-        <div className="messageSender_option">
-          <InsertEmoticonIcon style={{ color: "orange" }} />
-          <h3>Feeling/Activity</h3>
-        </div>
-        <input
-          type="file"
-          ref={hiddenFileInput}
-          onChange={handleChange}
-          style={{display: 'none'}}
-         />
-      </div>
-    </div>
-  );
+  </Container>
+
+
+
+  </>
 }
 
 export default Createpost;
