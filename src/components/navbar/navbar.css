@@ -76,6 +76,10 @@
   justify-content: center;
   align-self: center;
 }
+.user_name{
+  font-weight: bold!important;
+  color: black!important;
+}
 
 /* ----------------data-title------------ */
 [data-title] {

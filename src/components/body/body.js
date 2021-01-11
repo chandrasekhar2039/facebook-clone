@@ -4,7 +4,7 @@ import {Container,Row,Col} from "react-bootstrap"
 import Stry from "../story/story.js"
 import "./body.css"
 import Createpost from "../create_post/create.js";
-// import Post from "../post/post.js";
+import Post from "../post/post.js";
 import Footer from "../footer/footer.js";
 import DB from "../../firebase/firebase.js";
 
@@ -25,7 +25,7 @@ function Body(){
       <Container className="mt-5 pt-2 body_main">
 
       <div className="story_frame">
-       <Stry name_user="Chandu" className="pl-2" image="https://i.ibb.co/rfZMKxn/ezgif-com-gif-maker.gif" pic="https://i.ibb.co/9Hx8Rfy/applied.png"/>
+       <Stry name_user="Chandu" className="pl-2" image="https://i.ibb.co/rfZMKxn/ezgif-com-gif-maker.gif" pic="https://i.ibb.co/zhhMbt1/applied.png"/>
      <Stry name_user="Elon Musk" image="https://media.vanityfair.com/photos/5a7b182c9b38580e8603ca4f/master/w_2560%2Cc_limit/elon-musk-showman-rocket.jpg" pic="https://peaklife.in/wp-content/uploads/2019/06/elon-musk-image.jpg"/>
      <Stry name_user="The Rock" image="https://api.time.com/wp-content/uploads/2016/01/time-100-2016-the-rock-dwayne-johnson.jpg?quality=85&w=407" pic="https://m.media-amazon.com/images/M/MV5BMTkyNDQ3NzAxM15BMl5BanBnXkFtZTgwODIwMTQ0NTE@._V1_UX214_CR0,0,214,317_AL_.jpg"/>
   <Stry name_user="Kevin" image="https://25.media.tumblr.com/tumblr_lvw7xfSpZR1r48oh6o1_100.gif" pic="https://i.insider.com/5e08c31d954bda328a3babe2?width=1100&format=jpeg&auto=webp"/>
@@ -35,19 +35,19 @@ function Body(){
     <div className="createpost mr-5 ml-1">
       <Createpost />
     </div>
-    {/*<div className="post_main">
+    <div className="post_main mr-5 p-1 ml-1">
+    {posts.map((post) => (
+                <Post
+                  key={post.id}
+                  profilePic={post.data.profilePic}
+                  message={post.data.message}
+                  timestamp={post.data.timeStamp}
+                  username={post.data.userName}
+                  image={post.data.image}
+                />
 
-          {posts.map((post) => (
-        <Post
-          key={post.id}
-          profilePic={post.data.profilePic}
-          message={post.data.message}
-          timestamp={post.data.timeStamp}
-          username={post.data.userName}
-          image={post.data.image}
-        />
-      ))}
-    </div>*/}
+          ))}
+    </div>
     <div ><Footer /></div>
     </Container>
   );

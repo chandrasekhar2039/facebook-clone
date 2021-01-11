@@ -1,5 +1,5 @@
 .leftbar{
-position: sticky;
+position: fixed !important;
 }
 
 .line{

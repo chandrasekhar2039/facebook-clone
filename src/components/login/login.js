@@ -3,26 +3,26 @@ import "./login.css";
 
 import {Container,Row,Col,Card,Button} from "react-bootstrap"
 
-// import { auth, provider } from "../../firebase/firebase.js";
-// import { actionTypes } from "../../data/reducer.js";
-// import { useStateValue } from "../../data/stateprovide.js";
+import { auth, provider } from "../../firebase/firebase.js";
+import { actionTypes } from "../../data/reducer.js";
+import { useStateValue } from "../../data/stateprovide.js";
 
 function Login() {
-  // const [state, dispatch] = useStateValue();
+  const [state, dispatch] = useStateValue();
 
-  // const signIn = (e) => {
-  //   e.preventDefault();
-  //   auth
-  //     .signInWithPopup(provider)
-  //     .then((result) => {
-  //       dispatch({
-  //         type: actionTypes.SET_USER,
-  //         user: result.user,
-  //       });
-  //       // console.log(result);
-  //     })
-  //     .catch((error) => alert(error.message));
-  // };
+  const signIn = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
+        // console.log(result);
+      })
+      .catch((error) => alert(error.message));
+  };
 
 const revoke =() =>{
   alert("congo!");
@@ -40,7 +40,7 @@ const revoke =() =>{
       <Card className="card_login mt-2 " >
        <Card.Body>
 
-          <Button variant="primary" className="w-100 login_btn" onClick={revoke}>Login using Google</Button>
+          <Button variant="primary" className="w-100 login_btn" onClick={signIn}>Login using Google</Button>
 
         </Card.Body>
      </Card>

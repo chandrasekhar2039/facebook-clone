@@ -21,12 +21,13 @@ import Avatar from '@material-ui/core/Avatar';
 //badge
 import Badge from '@material-ui/core/Badge';
 
-// import { useStateValue } from "../../data/stateprovide.js";
+import { useStateValue } from "../../data/stateprovide.js";
 
 
 function Navbar_comp() {
-  // const [{ user }, dispatch] = useStateValue();
-  // var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
+  const [{ user }, dispatch] = useStateValue();
+  var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
+
   return <>
 
    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="navbar_main" fixed="top">
@@ -57,11 +58,11 @@ function Navbar_comp() {
      </Nav>
 
      <Nav className="ml-auto nav_right">
-       <Nav.Link href="#deets" data-title="User"><div className="user_info d-flex mr-1 mt-1"><Avatar src="#" /> <p className="pl-2 pr-1">test</p> </div></Nav.Link>
-       <Nav.Link href="#deets"><Badge color="secondary" className="icon" data-title="Create" ><AddRoundedIcon /></Badge></Nav.Link>
-       <Nav.Link href="#deets"><Badge color="secondary" badgeContent={4} max={9} className="icon" data-title="Messenger"><ForumRoundedIcon /> </Badge></Nav.Link>
-       <Nav.Link href="#deets"><Badge color="secondary" badgeContent={7} max={9} className="icon" data-title="Notifications" ><NotificationsActiveRoundedIcon /> </Badge></Nav.Link>
-       <Nav.Link href="#deets"><Badge color="secondary" className="icon" data-title="Account"> <ArrowDropDownRoundedIcon /> </Badge></Nav.Link>
+       <Nav.Link href="#" data-title={firstname}><div className="user_info d-flex mr-1 mt-1"><Avatar src={user.photoURL} /> <p className="pl-2 pr-1 user_name">{firstname}</p> </div></Nav.Link>
+       <Nav.Link href="#"><Badge color="secondary" className="icon" data-title="Create" ><AddRoundedIcon /></Badge></Nav.Link>
+       <Nav.Link href="#"><Badge color="secondary" badgeContent={4} max={9} className="icon" data-title="Messenger"><ForumRoundedIcon /> </Badge></Nav.Link>
+       <Nav.Link href="#"><Badge color="secondary" badgeContent={7} max={9} className="icon" data-title="Notifications" ><NotificationsActiveRoundedIcon /> </Badge></Nav.Link>
+       <Nav.Link href="#"><Badge color="secondary" className="icon" data-title="Account"> <ArrowDropDownRoundedIcon /> </Badge></Nav.Link>
      </Nav>
 
 

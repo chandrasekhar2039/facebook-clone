@@ -26,9 +26,15 @@
 .main_cre .mob{
   display: none;
 }
+.des_in{
+  display: inline;
+}
+.mob_in{
+  display: none;
+}
 
 /* --------------moblie-view------------ */
-@media (max-width:600px) {
+@media (max-width:1000px) {
   .user_input .col-1{
     margin-left: 13px !important;
   }
@@ -37,7 +43,7 @@
   height: 35px !important;
 }
 .main_cre input{
-  font-size: 12px !important;
+  font-size: 11px !important;
   padding-left: 7px !important;
 }
 .activity p{
@@ -49,5 +55,11 @@ padding-top: 3px !important;
 }
 .main_cre .mob{
   display: flex !important;
+}
+.des_in{
+  display: none;
+}
+.mob_in{
+  display: inline;
 }
 }

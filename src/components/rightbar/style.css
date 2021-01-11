@@ -2,6 +2,7 @@
   height: 90vh;
   width: 310px;
   overflow: hidden;
+  position: fixed !important;
 }
 
 .frames {

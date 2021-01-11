@@ -11,7 +11,7 @@ import VideocamRoundedIcon from '@material-ui/icons/VideocamRounded';
 
 import {Container,Col,Row,Image} from "react-bootstrap"
 
-// import { useStateValue } from "../../data/stateprovide.js";
+import { useStateValue } from "../../data/stateprovide.js";
 import DB from "../../firebase/firebase.js";
 import Firebase from "firebase";
 
@@ -33,7 +33,7 @@ function Createpost() {
   //state and hooks
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  // const [{ user }, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
   const [open, setOpen] = useState(false);
   const [src,setsrc]=useState("");
   const [fileUploaded,setfile]=useState("");
@@ -42,20 +42,21 @@ function Createpost() {
 
     e.preventDefault();
 
-    // DB.collection("posts").add({
-    //   message: input,
-    //   timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
-    //   profilePic: user.photoURL,
-    //   userName: user.displayName,
-    //   image: imageUrl,
-    // });
+    DB.collection("posts").add({
+      message: input,
+      timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
+      profilePic: user.photoURL,
+      userName: user.displayName,
+      image: imageUrl,
+    });
 
 
     setInput("");
     setImageUrl("");
   };
 
-  // var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
+  var firstname = user.displayName.substr(0, user.displayName.indexOf(" "));
+
 
   const hiddenFileInput = React.useRef(null);
 
@@ -102,13 +103,13 @@ function handleClose() {
 
 
 
-    // DB.collection("posts").add({
-    //   message: input,
-    //   timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
-    //   profilePic: user.photoURL,
-    //   userName: user.displayName,
-    //   image: downloadUrl,
-    // });
+    DB.collection("posts").add({
+      message: input,
+      timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
+      profilePic: user.photoURL,
+      userName: user.displayName,
+      image: downloadUrl,
+    });
     setInput("");
 
   }
@@ -116,31 +117,47 @@ function handleClose() {
   return <>
   <Container className="main_cre p-1">
 <Row className="user_input mt-2 pb-3">
-   <Col xs={1}className="justify-content-center d-flex pr-0 ml-1 pt-1" >{<Avatar src={"#"} />}</Col>
+   <Col xs={1}className="justify-content-center d-flex pr-0 ml-1 pt-1" >{<Avatar src={user.photoURL} />}</Col>
 
    <Col xs={7} className="">
    <form className="thoughts  p-1 mt-1">
-      <input className=" pl-3 pr-2 p-1 w-100"
+      <input className=" pl-3 pr-2 p-1 w-100 des_in"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`what's on your mind ${"chandu"}? `}
+            placeholder={`what's on your mind ${firstname}? `}
             type="text"
-          />  <button  onClick={handleSubmit} type="submit" style={{display:"none"}} ></button>
+          />
+          <input className=" pl-3 pr-2 p-1 w-100 mob_in"
+                value={input}
+              onClick={handleClick}
+                placeholder={`Any thought's ${firstname}? `}
+                type="text"
+              />
+
+
+           <button  onClick={handleSubmit} type="submit" style={{display:"none"}} ></button>
       </form>
      </Col>
    <Col xs={3} className="p-0">
     <form className="img_url  mt-1 p-1">
-      <input className="pl-3 w-100 pr-2 p-1"
+      <input className="pl-3 w-100 pr-2 p-1 des_in"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             type="text"
             placeholder="Image Url"
           />
+
+          <input className="pl-3 w-100 pr-2 p-1 mob_in"
+                value={imageUrl}
+                onClick={handleClick}
+                type="text"
+                placeholder="Image Url"
+              />
           <button onClick={handleSubmit} type="submit" style={{display:"none"}}></button></form>
     </Col>
        </Row>
   <Row className="activity mt-2 " >
-    <Col xs={4} className="" >
+    <Col xs={4} className="live" >
      <VideocamRoundedIcon style={{ color: "red" }} />
           <p className="pl-2">Live Video</p>
    </Col>
