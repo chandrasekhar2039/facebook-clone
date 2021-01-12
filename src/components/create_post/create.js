@@ -80,6 +80,7 @@ function Createpost() {
    var reader = new FileReader();
    reader.onload = function(event) {
     openpopup(event);
+
   }
 
   reader.readAsDataURL(event.target.files[0]);
@@ -90,6 +91,7 @@ function Createpost() {
 
 function openpopup(event){
   setOpen(true);
+  console.log(event.target);
   setsrc(event.target.result);
 
 }
@@ -101,10 +103,8 @@ function handleClose() {
   async function handlePost(){
 
    setOpen(false);
-
-
-var hold=input;
-setInput("");
+   var hold=input;
+   setInput("");
 
    let bucketName="postImages";
    let storageRef =Firebase.storage().ref(`${bucketName}/${fileUploaded.name}`);
