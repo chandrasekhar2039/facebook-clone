@@ -3,11 +3,11 @@
   background-position: center center;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  width: 105px;
-  height: 190px;
+  width: 100px;
+  height: 160px;
   box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
-  margin-right: 10px;
+  margin: 0 5px;
   transition: transform 100ms ease-in;
   cursor: pointer;
 }
@@ -21,10 +21,32 @@
   margin: 10px;
   border: 4px solid #2e81f4;
 }
+
 .story > h4 {
   position: absolute;
   bottom: 20px;
   left: 9px;
   color: white;
   font-size: 0.8rem;
+}
+
+@media (max-width:600px) {
+  .story .MuiAvatar-root{
+    width: 30px;
+    height: 30px;
+  }
+  .story {
+    position: relative;
+    background-position: center center;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    width: 95px;
+    height: 150px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px !important;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+  }
+
 }

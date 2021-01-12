@@ -1,27 +1,18 @@
-.row{
-  display: flex;
-  width: 300px;
-  height: 55px;
-  border-radius: 7px;
-  cursor: pointer;
-}
-.row:hover{
-    background-color: #DCDCDC;
+.props_left .MuiSvgIcon-root{
+  width: 35px;
+  height: 35px;
+  color:#1877f2;
 }
 
-.col-1{
- padding: 9px 0 0 10px;
+.props_left {
+  margin: 10px;
+  padding: 7px;
+  cursor: pointer !important;
 }
-.col-1 .MuiSvgIcon-root{
-  width: 35px !important;
-  height: 35px !important;
-  color: #1877f2;
-}
-.col-1 .MuiAvatar-root{
-  width: 35px !important;
-  height: 35px !important;
-}
-.col-2{
-  padding: 13px 0 0 10px;
+
+.props_left .name_prop{
+  align-self: center;
+  font-size: 17px;
   font-weight: 500;
+  cursor: pointer;
 }

@@ -1,115 +1,65 @@
-.messageSender {
+.main_cre{
+  background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 7px -7px rgba(0,0,0,.75);
+}
+.main_cre .user_input {
+  border-bottom: 1.5px solid #eff2f5;
+}
+.activity .col-4 {
   display: flex;
-  margin-top: 30px;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
-  width: 100%;
-}
-.messageSender_top {
-  display: flex;
-  border-bottom: 1px solid #eff2f5;
-  padding: 13px;
-}
-.messageSender_top > form {
-  flex: 1;
-  display: flex;
-}
-.MuiAvatar-root{
-  cursor: pointer;
-}
-.messageSender_top > form > .words{
-  width: 380px;
-  outline-width: 0;
-  border: none;
-  padding: 5px 20px;
-  margin: 0 5px 0 7px;
-  border-radius: 100px;
-  background-color: #eff2f5;
-  cursor: pointer;
-}
-.messageSender_top > form > .words >input{
-  width: 380px;
-}
-.messageSender_top > form > .img{
-  outline-width: 0;
-  border: none;
-  padding: 5px 20px;
-  margin: 0 7px;
-  border-radius: 100px;
-  background-color: #eff2f5;
-  cursor: pointer;
-}
- input {
-  border: none;
-  background-color: #eff2f5;
-  outline: none !important;
-  cursor: pointer;
+  justify-content: center;
+
 }
 
-.messageSender_top > form > button {
+.main_cre form{
+  border-radius: 100px;
+      background-color: #eff2f5;
+}
+.main_cre input{
+  outline: none;
+  background-color: #eff2f5;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+}
+.main_cre .mob{
   display: none;
 }
-/* @media (max-width: 1200px) {
-  .messageSender_top > form > button {
-    display: visible;
+.des_in{
+  display: inline;
+}
+.mob_in{
+  display: none;
+}
+
+/* --------------moblie-view------------ */
+@media (max-width:1000px) {
+  .user_input .col-1{
+    margin-left: 13px !important;
   }
-} */
-.messageSender_input {
-  flex: 1;
+.user_input .col-1 .MuiAvatar-root{
+  width: 35px !important;
+  height: 35px !important;
 }
-.messageSender_bottom {
-  display: flex;
-  justify-content: center;
+.main_cre input{
+  font-size: 11px !important;
+  padding-left: 7px !important;
 }
-
-.messageSender_option {
-  padding: 7px 15px;
-  display: flex;
-  align-items: center;
-  color: gray;
-  margin: 10px 25px 10px 0;
-  cursor: pointer;
+.activity p{
+  font-size: 12px;
+padding-top: 3px !important;
 }
-.messageSender_option  .MuiSvgIcon-root{
-  width: 1.2em !important;
-  height: 1.2em!important;
+.main_cre .des{
+  display: none !important;
 }
-.messageSender_option > h3 {
-  font-size: 1.1rem;
-  margin-left: 10px;
-  font-weight: 500;
-  cursor: pointer;
-  cursor: pointer;
+.main_cre .mob{
+  display: flex !important;
 }
-
-.messageSender_option:hover {
-  background-color: #eff2f5;
-  border-radius: 7px;
-  cursor: pointer;
+.des_in{
+  display: none;
 }
-.popup_top{
-  display: flex;
+.mob_in{
+  display: inline;
 }
-.popup_top > .MuiAvatar-root{
-  margin: 8px 5px 0 0;
-}
-.popup_img{
-  margin: 15px 0 10px;
-  display: flex;
-  justify-content: center;
-}
-.popup_img > img{
-  border-radius: 7px;
-  width: 550px;
-  height:300px;
-  max-width: 550px !important;
-  max-height: 500px !important;
-}
-.poup_topinfo{
-  margin: 5px;
-}
-.poup_topinfo > h3{
-  font-size: 1rem;
 }

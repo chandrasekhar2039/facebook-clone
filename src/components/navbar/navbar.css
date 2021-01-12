@@ -1,101 +1,87 @@
-*{
-  margin: 0;
-  padding: 0;
+.navbar_main{
+  padding: 0.5rem 1rem 0rem !important;
+  color: white !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-.navbar{
-  justify-content: space-between;
-  display: flex;
-  padding: 10px 20px 0 20px;
-  box-shadow:2px 2px 7px rgba(128,128,128,0.3);
-  background-color: white;
-}
 
-.left_nav{
-display: flex;
-justify-content: center;
-margin: 10px 0 0;
-}
-
-.left_nav img{
-  height: 35px;
-}
-.search{
-  justify-content: center;
-  background-color: #eeeeee;
+/* -------------nav_left----------------- */
+.search_bar{
+  background-color: #eee;
+  padding: 5px 5px 5px 20px;
   border-radius: 30px;
-  margin: 0 0 15px 10px;
 }
-.search .MuiSvgIcon-root{
-  position: relative;
-  top: 7px;
-  left: 20px;
+.search_bar input{
+  border: none!important;
+  background-color: #eee;
+  width: 11vw;
+  margin-left: 7px;
+  outline: none;
+}
+.search_bar .MuiSvgIcon-root{
 
 }
 
-.search input{
-  outline: none !important;
-  font-size: 1rem;
-  background-color: #eeeeee;
-  border: none;
-  border-radius: 30px;
-  margin: 10px 0 0 30px;
-}
-.centre_nav{
+/* -------------nav_center-------------- */
+.nav_center .icon{
+  margin: auto 2.6vw;
   display: flex;
-  justify-content:space-between;
-  margin: 0 auto 0 90px;
 }
-.centre_nav  .MuiSvgIcon-root{
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
+.nav_center .nav-link:hover{
+  background-color: rgba(212,218,229,0.4);
+  border-radius: 7px;
 }
-.centre_nav .icon{
+.nav_center .icon .MuiSvgIcon-root{
+  font-size: 2.2rem;
+}
+
+.nav_center .active_block{
+    color: #1877f2!important;
+    border-bottom: .8mm solid #1877f2;
+    border-radius: 0!important;
+
+}
+.nav_center .active_block:hover{
+  background-color: white !important;
+}
+.nav_center h6{
+  display: none;
+}
+
+/* --------------nav_right------------- */
+.nav_right .icon{
+  margin: auto;
+  background-color: rgba(212,218,229,0.7) !important;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
   justify-content: center;
-  display: flex;
-  margin: 0 3px 0;
-  padding: 15px 10px 10px;
-  width: 110px;
-  color: #65676b;
+  color: rgba(0,0,0,0.8);
 }
-.centre_nav .icon:hover{
-  justify-content: center;
-  display: flex;
-  margin: 0 3px 0;
-  padding: 15px 10px 10px;
-  width: 110px;
-  background-color: #eeeeee;
-  border-radius: 10px;
-  cursor: pointer;
+.nav_right .icon:hover{
+  background-color: rgba(206, 215, 233, 1)!important;
+    color: rgba(0,0,0,1);
 }
-
-.right_nav{
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 10px 0 0;
+.nav_right .icon .MuiSvgIcon-root{
+  align-self: center !important;
+  font-size: 1.4rem;
 }
-.right_nav .icon{
-  padding: 5px;
+.nav_right .user_info .MuiAvatar-root {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
-  background-color: #eeeeee;
-  margin: 0 9px 0;
+}
+.nav_right .user_info p{
+  margin-bottom: 0 !important;
   justify-content: center;
+  align-self: center;
 }
-.right_nav .MuiSvgIcon-root{
-  width: 0.9em !important;
-  height: 0.9em !important;
-  margin: 4px auto 0;
+.user_name{
+  font-weight: bold!important;
+  color: black!important;
 }
-.active_block{
-  color: #1877f2 !important;
-  border-bottom: 0.8mm solid #1877f2;
-  background-color: white !important;
-  border-radius: 0 !important;
-}
+
+/* ----------------data-title------------ */
 [data-title] {
   position: relative;
   cursor: pointer;
@@ -117,15 +103,29 @@ margin: 10px 0 0;
   z-index: 100;
 }
 
-.user_info{
-  display: flex;
-  justify-content: center;
-}
-.user_info p{
-  margin: 5px 5px 0 10px;
-}
-.user_info .MuiAvatar-root{
-  margin: 5px auto 0;
-  width: 30px !important;
-  height: 30px !important;
+/* -----------------------------mobile view-------------- */
+
+@media (max-width:1000px) {
+  .navbar_main{
+    padding: 0.5rem 1rem 0.5rem !important;
+  }
+  .nav_left{
+    display: none !important;
+  }
+  .nav_right{
+    display: none !important;
+  }
+  .nav_center .active_block{
+      color: #1877f2!important;
+      border: none !important;
+
+  }
+  .nav_center .active_block:hover{
+    background-color: white !important;
+  }
+  .nav_center h6{
+    display: inline;
+    padding: 5px;
+    margin-left: 20px;
+  }
 }

@@ -15,13 +15,14 @@ import UpdateTwoToneIcon from '@material-ui/icons/UpdateTwoTone';
 import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
 
 import { useStateValue } from "../../data/stateprovide.js";
+
 //css
 import "./style.css";
 
 function Leftbar(){
   const [{ user }, dispatch] = useStateValue();
 
-  return(<div className="leftbar">
+  return(<div className="leftbar mt-5 pt-3">
     <div className="leftbar_top">
     <Nav icon={<Avatar src={user.photoURL} />} name={user.displayName} />
     <Nav icon={<FlagTwoToneIcon />} name="Pages" />

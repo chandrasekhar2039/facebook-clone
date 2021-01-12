@@ -1,35 +1,14 @@
 .login_main{
-  display: flex;
-  justify-content: center;
-  margin: 240px auto auto;
+  margin: 30vh auto 0;
 }
-.login_logo{
-  width: 500px;
-  height: 150px;
-  margin-right: 95px;
+.card_login{
+  border-radius: 8px !important;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px !important;
 }
-
-.login_port{
-  align-items: center;
-  background-color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-  box-sizing: border-box;
-  margin: 40px 0 0 95px;
-  padding: 8px 0 0;
-  width: 400px;
+.login_btn{
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
 }
-.login_port > form > button{
-  margin: 23px 15px 0;
-  padding: 15px;
-  width: -webkit-fill-available;
-  font-size: 1.3rem;
-  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
-  border-radius: 7px;
-  color: white;
-  background-color: #1877f2;
-  outline: none !important;
-  cursor: pointer;
-  border: none;
+.login_para{
+  font-size: 14px;
 }

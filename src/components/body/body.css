@@ -1,4 +1,48 @@
 .story_frame{
   display: flex;
-  justify-content: center;
+  overflow-x: scroll;
+  margin: 10px auto;
+}
+.story_frame::-webkit-scrollbar {    display: none;}
+
+.story_prop{
+  margin-bottom: 10px;
+}
+.post_main{
+  overflow-y: scroll;
+}
+.post_main::-webkit-scrollbar {    display: none;}
+
+@media (max-width:1000px) {
+  .body_main{
+    padding: 0.5rem 0 0!important;
+  }
+  .body_main .story_frame{
+    margin-left: 0rem !important;
+  }
+  .body_main .createpost{
+    margin: 0!important;
+  }
+  .activity .live{
+    padding-left: 15px!important;
+    padding-right: 0px !important;
+  }
+  .body_main .post_main{
+    margin: 0!important;
+  }
+  .top_post .display_info{
+    padding-left: 25px !important;
+  }
+  .post_main .share_post{
+    margin: 13px 0!important;
+  }
+   .post_like{
+    padding-right: 0!important;
+  }
+  .post_cmnt{
+    padding-left: 0!important;
+  }
+  .post_main .share_post p{
+    font-size: 14px!important;
+  }
 }

@@ -5,7 +5,7 @@ import Iframe from "./props/iframe.js"
 function Rightbar(){
   return(
 
-<div className="rightbar">
+<div className="rightbar mt-5 pt-3 ml-5 pl-3">
 <div className="frames">
 <Iframe src="https://www.instagram.com/p/CFHgw67gvXO/embed" />
 <Iframe src="https://www.instagram.com/p/CEUHdlbgB3G/embed" />
