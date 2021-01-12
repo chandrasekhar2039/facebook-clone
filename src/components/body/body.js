@@ -22,7 +22,7 @@ function Body(){
   }, []);
 
     return(
-      <Container className="mt-5 pt-2 body_main">
+      <Container className="mt-5 body_main">
 
       <div className="story_frame">
        <Stry name_user="Chandu" className="pl-2" image="https://i.ibb.co/rfZMKxn/ezgif-com-gif-maker.gif" pic="https://i.ibb.co/zhhMbt1/applied.png"/>

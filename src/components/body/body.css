@@ -15,7 +15,7 @@
 
 @media (max-width:1000px) {
   .body_main{
-    padding: 0!important;
+    padding: 0.5rem 0 0!important;
   }
   .body_main .story_frame{
     margin-left: 0rem !important;
