@@ -37,13 +37,19 @@ function Createpost() {
   const [open, setOpen] = useState(false);
   const [src,setsrc]=useState("");
   const [fileUploaded,setfile]=useState("");
+  const [mob,setmob]=useState(false);
 
   function handleSubmit(e) {
 
     e.preventDefault();
 
+    setmob(false);
+    var store =input;
+    setInput("");
+
+
     DB.collection("posts").add({
-      message: input,
+      message: store,
       timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
       profilePic: user.photoURL,
       userName: user.displayName,
@@ -74,6 +80,7 @@ function Createpost() {
    var reader = new FileReader();
    reader.onload = function(event) {
     openpopup(event);
+
   }
 
   reader.readAsDataURL(event.target.files[0]);
@@ -84,6 +91,7 @@ function Createpost() {
 
 function openpopup(event){
   setOpen(true);
+  console.log(event.target);
   setsrc(event.target.result);
 
 }
@@ -95,6 +103,8 @@ function handleClose() {
   async function handlePost(){
 
    setOpen(false);
+   var hold=input;
+   setInput("");
 
    let bucketName="postImages";
    let storageRef =Firebase.storage().ref(`${bucketName}/${fileUploaded.name}`);
@@ -104,7 +114,7 @@ function handleClose() {
 
 
     DB.collection("posts").add({
-      message: input,
+      message: hold,
       timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
       profilePic: user.photoURL,
       userName: user.displayName,
@@ -113,6 +123,13 @@ function handleClose() {
     setInput("");
 
   }
+
+  function handleClick_mob(){
+    setmob(true);
+  }
+ function  handleClose_mob(){
+   setmob(false);
+ }
 
   return <>
   <Container className="main_cre p-1">
@@ -129,7 +146,7 @@ function handleClose() {
           />
           <input className=" pl-3 pr-2 p-1 w-100 mob_in"
                 value={input}
-              onClick={handleClick}
+              onClick={handleClick_mob}
                 placeholder={`Any thought's ${firstname}? `}
                 type="text"
               />
@@ -140,19 +157,14 @@ function handleClose() {
      </Col>
    <Col xs={3} className="p-0">
     <form className="img_url  mt-1 p-1">
-      <input className="pl-3 w-100 pr-2 p-1 des_in"
+      <input className="pl-3 w-100 pr-2 p-1"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             type="text"
             placeholder="Image Url"
           />
 
-          <input className="pl-3 w-100 pr-2 p-1 mob_in"
-                value={imageUrl}
-                onClick={handleClick}
-                type="text"
-                placeholder="Image Url"
-              />
+
           <button onClick={handleSubmit} type="submit" style={{display:"none"}}></button></form>
     </Col>
        </Row>
@@ -182,8 +194,8 @@ function handleClose() {
           <DialogContentText>
           <div className="popup_main">
             <div className="popup_top d-flex">
-              <Avatar src={"#"} />
-                <h5 className="p-2 ">{"Chandrasekhar"}</h5>
+              <Avatar src={user.photoURL} />
+                <h5 className="p-2 ">{firstname}</h5>
                 </div>
                 <p className="m-1 ">{new Date().toLocaleDateString()}</p>
               </div>
@@ -192,7 +204,7 @@ function handleClose() {
           <TextField autoFocus autoComplete="off"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={`what's on your mind ${"chandu"} ? `}
+          placeholder={`what's on your mind ${firstname} ? `}
           type="text"
           fullWidth
            />
@@ -209,6 +221,47 @@ function handleClose() {
         </Button>
         </DialogActions>
       </Dialog>
+
+      {/*========================================== for mob popup=================================*/}
+
+      <Dialog
+    open={mob}
+    onClose={handleClose_mob}
+    aria-labelledby="form-dialog-title"
+  >
+    <DialogTitle id="form-dialog-title" >Create Post</DialogTitle>
+    <DialogContent>
+
+      <DialogContentText>
+      <div className="popup_main">
+        <div className="popup_top d-flex">
+          <Avatar src={user.photoURL} />
+            <h5 className="p-2 ">{firstname}</h5>
+            </div>
+            <p className="m-1 ">{new Date().toLocaleDateString()}</p>
+          </div>
+      </DialogContentText>
+
+      <TextField autoFocus autoComplete="off"
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      placeholder={`Any thought's ${firstname} ? `}
+      type="text"
+      fullWidth
+       />
+
+     {/*<Container><Row><Col> <Image src={src} className="w-100 mt-2" rounded /></Col></Row></Container>*/}
+
+    </DialogContent>
+    <DialogActions>
+      <Button onClick={handleClose_mob} color="primary">
+        Cancel
+      </Button>
+      <Button variant="contained" color="primary"  onClick={handleSubmit}>
+       Post
+    </Button>
+    </DialogActions>
+  </Dialog>
       </Col>
 
 
