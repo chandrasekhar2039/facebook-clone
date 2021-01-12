@@ -2,7 +2,7 @@ import React from "react";
 import "./login.css";
 
 import {Container,Row,Col,Card,Button} from "react-bootstrap"
-
+import Firebase from "firebase";
 import { auth, provider } from "../../firebase/firebase.js";
 import { actionTypes } from "../../data/reducer.js";
 import { useStateValue } from "../../data/stateprovide.js";
@@ -10,7 +10,29 @@ import { useStateValue } from "../../data/stateprovide.js";
 function Login() {
   const [state, dispatch] = useStateValue();
 
-  const signIn = (e) => {
+//   function signInRedirect(e) {
+//     // e.preventDefault();
+//   Firebase.auth().signInWithRedirect(provider);
+//
+// }
+
+//   React.useEffect(() => {
+//     // e.preventDefault();
+// // auth.signInWithRedirect(provider);
+//
+//     auth
+//        .getRedirectResult()
+//       .then((result) => {
+//         dispatch({
+//           type: actionTypes.SET_USER,
+//           user: result.user,
+//         });
+//         // console.log(result);
+//       })
+//       .catch((error) => alert(error.message));
+//   });
+
+const signIn = (e) => {
     e.preventDefault();
     auth
       .signInWithPopup(provider)
