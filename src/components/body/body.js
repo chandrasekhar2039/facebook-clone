@@ -14,7 +14,7 @@ function Body(){
   const [posts, setPosts] = React.useState([]);
 
   React.useEffect(() => {
-    DB.collection("posts")
+    DB.collection("Event")
       .orderBy("timeStamp", "desc")
       .onSnapshot((snapshot) =>
         setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))

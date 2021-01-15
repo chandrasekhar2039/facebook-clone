@@ -48,7 +48,7 @@ function Createpost() {
     setInput("");
 
 
-    DB.collection("posts").add({
+    DB.collection("Event").add({
       message: store,
       timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
       profilePic: user.photoURL,
@@ -113,7 +113,7 @@ function handleClose() {
 
 
 
-    DB.collection("posts").add({
+    DB.collection("Event").add({
       message: hold,
       timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
       profilePic: user.photoURL,
