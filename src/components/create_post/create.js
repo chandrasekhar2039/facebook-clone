@@ -141,13 +141,13 @@ function handleClose() {
       <input className=" pl-3 pr-2 p-1 w-100 des_in"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`what's on your mind ${firstname}? `}
+            placeholder={`Enter your answer ${firstname}? `}
             type="text"
           />
           <input className=" pl-3 pr-2 p-1 w-100 mob_in"
                 value={input}
               onClick={handleClick_mob}
-                placeholder={`Any thought's ${firstname}? `}
+                placeholder={`Enter your answer ${firstname}? `}
                 type="text"
               />
 
@@ -204,7 +204,7 @@ function handleClose() {
           <TextField autoFocus autoComplete="off"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={`what's on your mind ${firstname} ? `}
+          placeholder={`Enter your answer ${firstname} ? `}
           type="text"
           fullWidth
            />
@@ -245,7 +245,7 @@ function handleClose() {
       <TextField autoFocus autoComplete="off"
       value={input}
       onChange={(e) => setInput(e.target.value)}
-      placeholder={`Any thought's ${firstname} ? `}
+      placeholder={`Enter your answer ${firstname} ? `}
       type="text"
       fullWidth
        />

@@ -6,7 +6,7 @@
 .container-fluid .row{
   width: auto!important;
 }
-@media (max-width:1000px) {
+@media (max-width:1100px) {
   .mob{
     display: none;
   }
