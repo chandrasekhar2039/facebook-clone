@@ -60,12 +60,12 @@ function Body(){
 
   <div className="user_msg">
 
-  <p className="pl-4 pr-4 text-center"><b>Welcome onboard!!</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+  <p className="pl-4 pr-4 text-center"><b>Welcome onboard!!</b> lets start with some basic instruction about the quest and the procedure/criteria to successfully submit your answer and stand a chance to win. Pay special attention to the highlighted text and maintain proper decorum as mentioned below.</p>
   <h4 className="pl-4 pr-4">Instruction</h4>
-  <p className="pl-4 pr-4"> &#8226; Their are bunch of <b>riddles</b> hidden between <em>memes, joke's </em> and <em>quotation's</em>. Find as many as you can, we warn you this won't be as easy as it may sound.</p>
+  <p className="pl-4 pr-4"> &#8226; There are bunch of <b>riddles</b> hidden between <em>memes, joke's </em> and <em>quotation's</em>. Find as many as you can, we warn you this won't be as easy as it may sound.</p>
   <p className="pl-4 pr-4"> &#8226; After you finish finding riddles start collecting answers. You can use google, dive into books, burn the internet or just give up.</p>
-  <p className="pl-4 pr-4"> &#8226; When you finish collecting answers <b>post on your feed</b> itself. Remember <b>you have only one chance to post your answers multiple posts will be disqualified.</b></p>
-  <p className="pl-4 pr-4"> &#8226; Every riddle end's with a specific number or symbol. Type your answer <b>after entering the specific number or symbol</b> given to the riddle <b>symbol(answer)</b> <em>eg:- #(your answer goes here), 32(your answer goes here)</em>. This will lead to the question you have answered.</p>
+  <p className="pl-4 pr-4"> &#8226; When you finish collecting answers <b>post on your feed</b> itself. Remember <b>you have only one chance to post your answers, multiple posts will be disqualified.</b></p>
+  <p className="pl-4 pr-4"> &#8226; Every riddle ends with a specific number or symbol. Type your answer <b>after entering the specific number or symbol</b> given to the riddle <b>symbol(answer)</b> <em>eg:- #(your answer goes here), 32(your answer goes here)</em>. This will lead to the question you have answered.</p>
   <p className="pl-4 pr-4"> &#8226; <em>Reloading of page will log you out of the quest.</em> </p>
   <p className="pl-4 pr-4"> &#8226; Hitting enter will post your answer in the feed and you can scroll down to see your posted answer.</p>
   <h5 className="pl-4 pr-4">Note:-</h5>
