@@ -43,6 +43,7 @@ function Createpost() {
 
     e.preventDefault();
 
+
     setmob(false);
     var store =input;
     setInput("");
@@ -106,7 +107,7 @@ function handleClose() {
    var hold=input;
    setInput("");
 
-   let bucketName="postImages";
+   let bucketName="eventImages";
    let storageRef =Firebase.storage().ref(`${bucketName}/${fileUploaded.name}`);
    await storageRef.put(fileUploaded);
    let downloadUrl=await storageRef.getDownloadURL();
@@ -130,6 +131,7 @@ function handleClose() {
  function  handleClose_mob(){
    setmob(false);
  }
+
 
   return <>
   <Container className="main_cre p-1">
@@ -159,7 +161,9 @@ function handleClose() {
     <form className="img_url  mt-1 p-1">
       <input className="pl-3 w-100 pr-2 p-1"
             value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
+
+            onChange={(e) => setInput(e.target.value)}
+
             type="text"
             placeholder="Image Url"
           />
@@ -174,7 +178,7 @@ function handleClose() {
           <p className="pl-2">Live Video</p>
    </Col>
    <Col xs={4} className="" >
-   <div onClick={handleClick} data-title="Click to Upload Photo"  className="d-flex">
+   <div  className="d-flex">
   <AddToPhotosRoundedIcon style={{ color: "green" }}  />
           <p className="pl-2 ">Photo/Video</p></div>
 
@@ -188,7 +192,7 @@ function handleClose() {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title" >Create Post</DialogTitle>
+        <DialogTitle id="form-dialog-title" >Answer riddles</DialogTitle>
         <DialogContent>
 
           <DialogContentText>
@@ -229,7 +233,7 @@ function handleClose() {
     onClose={handleClose_mob}
     aria-labelledby="form-dialog-title"
   >
-    <DialogTitle id="form-dialog-title" >Create Post</DialogTitle>
+    <DialogTitle id="form-dialog-title" >Answer riddles</DialogTitle>
     <DialogContent>
 
       <DialogContentText>
