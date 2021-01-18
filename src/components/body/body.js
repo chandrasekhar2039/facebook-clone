@@ -14,8 +14,8 @@ function Body(){
   const [posts, setPosts] = React.useState([]);
 
   React.useEffect(() => {
-    DB.collection("Event")
-      .orderBy("timeStamp")
+    DB.collection("Public")
+      .orderBy("timeStamp","desc")
       .onSnapshot((snapshot) =>
         setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
       );
@@ -36,55 +36,7 @@ function Body(){
       <Createpost />
     </div>
     <div className="post_main mr-5 p-1 ml-1">
-  {/*===============================instruction section===============*/}
-  <Container className="posts mt-3 p-0">
 
-  <Container className="top_post pt-1">
-  <Row className="pl-3 pr-3">
-  <Col className="avtar d-flex align-self-center p-0" xs={1}>
-
-  </Col>
-
-  <Col className="display_info  justify-content-center pl-0 pr-0 text-center" xs={9}>
-  <h2 className="mb-0 mt-3 text-center pl-2">Read me</h2>
-  <p className="post_time pt-2 text-center" style={{fontSize:"15px"}}>Ultimate guide for your Quest.</p>
-  </Col>
-
-  <Col className="more p-0 ml-auto d-flex justify-content-end align-self-center" xs={1}>
-
-  </Col>
-  </Row>
-  </Container>
-
-  <Container className="content_post pr-0 pl-0 pb-4">
-
-  <div className="user_msg">
-
-  <p className="pl-4 pr-4 text-center"><b>Welcome onboard!!</b> lets start with some basic instruction about the quest and the procedure/criteria to successfully submit your answer and stand a chance to win. Pay special attention to the highlighted text and maintain proper decorum as mentioned below.</p>
-  <h4 className="pl-4 pr-4">Instruction</h4>
-  <p className="pl-4 pr-4"> &#8226; There are bunch of <b>riddles</b> hidden between <em>memes, joke's </em> and <em>quotation's</em>. Find as many as you can, we warn you this won't be as easy as it may sound.</p>
-  <p className="pl-4 pr-4"> &#8226; After you finish finding riddles start collecting answers. You can use google, dive into books, burn the internet or just give up.</p>
-  <p className="pl-4 pr-4"> &#8226; When you finish collecting answers <b>post on your feed</b> itself. Remember <b>you have only one chance to post your answers, multiple posts will be disqualified.</b></p>
-  <p className="pl-4 pr-4"> &#8226; Every riddle ends with a specific number or symbol. Type your answer <b>after entering the specific number or symbol</b> given to the riddle <b>symbol(answer)</b> <em>eg:- #(your answer goes here), 32(your answer goes here)</em>. This will lead to the question you have answered.</p>
-  <p className="pl-4 pr-4"> &#8226; <em>Reloading of page will log you out of the quest.</em> </p>
-  <p className="pl-4 pr-4"> &#8226; Hitting enter will post your answer in the feed and you can scroll down to see your posted answer.</p>
-  <h5 className="pl-4 pr-4">Note:-</h5>
-  <p className="pl-4 pr-4">Posting irrelevant texts, emoji or symbol will trigger strict official procedure and you will be restricted for answering further. You are only allowed to post your answers in the feed and all other features is currently disbaled for smooth flow of event.</p>
-  </div>
-
-  </Container>
-
-
-
-
-  </Container>
-
-
-
-
-
-
-  {/*===============================instruction section===============*/}
     {posts.map((post) => (
                 <Post
                   key={post.id}

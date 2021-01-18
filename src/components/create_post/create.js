@@ -49,7 +49,7 @@ function Createpost() {
     setInput("");
 
 
-    DB.collection("Event").add({
+    DB.collection("Public").add({
       message: store,
       timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
       profilePic: user.photoURL,
@@ -107,14 +107,14 @@ function handleClose() {
    var hold=input;
    setInput("");
 
-   let bucketName="eventImages";
+   let bucketName="publicImages";
    let storageRef =Firebase.storage().ref(`${bucketName}/${fileUploaded.name}`);
    await storageRef.put(fileUploaded);
    let downloadUrl=await storageRef.getDownloadURL();
 
 
 
-    DB.collection("Event").add({
+    DB.collection("Public").add({
       message: hold,
       timeStamp: Firebase.firestore.FieldValue.serverTimestamp(),
       profilePic: user.photoURL,
@@ -143,13 +143,13 @@ function handleClose() {
       <input className=" pl-3 pr-2 p-1 w-100 des_in"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`Enter your answer ${firstname}? `}
+            placeholder={`what's on your mind ${firstname}? `}
             type="text"
           />
           <input className=" pl-3 pr-2 p-1 w-100 mob_in"
                 value={input}
               onClick={handleClick_mob}
-                placeholder={`Enter your answer ${firstname}? `}
+                placeholder={`Any thought's ${firstname}? `}
                 type="text"
               />
 
@@ -178,7 +178,7 @@ function handleClose() {
           <p className="pl-2">Live Video</p>
    </Col>
    <Col xs={4} className="" >
-   <div  className="d-flex">
+  <div onClick={handleClick} data-title="Click to Upload Photo"  className="d-flex">
   <AddToPhotosRoundedIcon style={{ color: "green" }}  />
           <p className="pl-2 ">Photo/Video</p></div>
 
@@ -192,7 +192,7 @@ function handleClose() {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title" >Answer riddles</DialogTitle>
+        <DialogTitle id="form-dialog-title" >Create Post</DialogTitle>
         <DialogContent>
 
           <DialogContentText>
@@ -208,7 +208,7 @@ function handleClose() {
           <TextField autoFocus autoComplete="off"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={`Enter your answer ${firstname} ? `}
+          placeholder={`what's on your mind  ${firstname} ? `}
           type="text"
           fullWidth
            />
@@ -233,7 +233,7 @@ function handleClose() {
     onClose={handleClose_mob}
     aria-labelledby="form-dialog-title"
   >
-    <DialogTitle id="form-dialog-title" >Answer riddles</DialogTitle>
+    <DialogTitle id="form-dialog-title" >Create Post</DialogTitle>
     <DialogContent>
 
       <DialogContentText>
@@ -249,7 +249,7 @@ function handleClose() {
       <TextField autoFocus autoComplete="off"
       value={input}
       onChange={(e) => setInput(e.target.value)}
-      placeholder={`Enter your answer ${firstname} ? `}
+      placeholder={`Any thought's ${firstname} ? `}
       type="text"
       fullWidth
        />
